@@ -9,6 +9,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  Play,
   Quote,
   Mic,
   Heart,
@@ -297,7 +298,9 @@ export default function Home() {
       <span>India · Dubai · Singapore</span>
     </div>
 
-    <ChevronDown className="mx-auto mt-8 text-yellow-400 animate-bounce" size={32} />
+    <Link to="/about" aria-label="Scroll to About Me" className="block w-fit mx-auto mt-8">
+      <ChevronDown className="text-yellow-400 animate-bounce" size={32} />
+    </Link>
   </div>
 </section>
 
@@ -409,6 +412,44 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ================= VIDEO SECTION ================= */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center mb-10">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#201c16] mb-4">
+            Watch Him In Action
+          </h2>
+          <p className="text-gray-600">
+            See the energy live — hosting highlights straight from the YouTube channel.
+          </p>
+        </motion.div>
+
+        <motion.a
+          {...fadeUp}
+          href={SOCIALS.youtube}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative block max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-xl"
+        >
+          {/* ponytail: hero shot as placeholder thumbnail, swap for an actual highlight-reel frame when available */}
+          <img
+            src={heroImage}
+            alt="Watch Aman Shinde hosting highlights on YouTube"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-colors" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <Play className="text-white ml-1" size={32} fill="white" />
+            </span>
+          </div>
+          <span className="absolute bottom-5 left-5 right-5 flex items-center gap-2 text-white font-semibold text-lg [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]">
+            <FaYoutube className="text-red-500 shrink-0" size={24} /> Watch on YouTube
+          </span>
+        </motion.a>
       </section>
 
       {/* ================= SERVICE AREAS SECTION ================= */}

@@ -67,7 +67,7 @@ export default function Contact() {
             <MapPin className="text-yellow-500 shrink-0" size={22} />
             <div>
               <p className="text-sm text-gray-400">Based in</p>
-              <p className="font-semibold">Pan India · Destination Weddings Worldwide</p>
+              <p className="font-semibold">Delhi · Available Pan India</p>
             </div>
           </div>
 
